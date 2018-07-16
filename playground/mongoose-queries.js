@@ -1,7 +1,12 @@
+const {ObjectID} = require('mongodb');
 const {mongoose} = require('./../server/db/mongoose');
 const {Todo} = require('./../server/models/todo');
 
 var id = '5b4be35d022601123856d2fb';
+
+if(!ObjectID.isValid(id)){
+  console.log('ID not valid');
+}
 
 Todo.find({
   _id: id
